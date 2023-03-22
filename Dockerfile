@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y unzip git wget
 ENV CLOUDNET_VERSION=4.0.0-RC7
 RUN wget https://github.com/CloudNetService/CloudNet-v3/releases/download/$CLOUDNET_VERSION/CloudNet.zip -O /tmp/CloudNet.zip
 RUN unzip /tmp/CloudNet.zip
-FROM azul/zulu-openjdk-alpine:19-jre
+FROM azul/zulu-openjdk-alpine:20-jre
 ENV CLOUDNET_LAUNCHER_JAR=/var/lib/cloudnet/launcher.jar
 WORKDIR /cloudnet
 COPY --from=extractor /extractor/launcher.jar "$CLOUDNET_LAUNCHER_JAR"

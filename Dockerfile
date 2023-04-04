@@ -1,7 +1,7 @@
 FROM ubuntu as extractor
 WORKDIR /extractor
 RUN apt-get update && apt-get install -y unzip git wget
-ENV CLOUDNET_VERSION=4.0.0-RC7
+ENV CLOUDNET_VERSION=4.0.0-RC8
 RUN wget https://github.com/CloudNetService/CloudNet-v3/releases/download/$CLOUDNET_VERSION/CloudNet.zip -O /tmp/CloudNet.zip
 RUN unzip /tmp/CloudNet.zip
 FROM azul/zulu-openjdk-alpine:20-jre
